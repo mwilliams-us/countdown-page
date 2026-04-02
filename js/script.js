@@ -1,3 +1,5 @@
+// spawn flowers continuously
+
 function createFlower() {
     const flower = document.createElement("img");
     flower.src = "images/dahlia.png";
@@ -22,5 +24,30 @@ function createFlower() {
     }, 6000);
 }
 
-// spawn flowers continuously
+
+// countdown clock pulse
 setInterval(createFlower, 800);
+
+
+        const targetDate = new Date("2026-06-05T13:00:00Z");
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("timer").innerText = "Time reached.";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("timer").innerText =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
