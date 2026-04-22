@@ -29,7 +29,7 @@ function createFlower() {
 setInterval(createFlower, 800);
 
 
-        const targetDate = new Date("2026-06-05T13:00:00Z");
+        const targetDate = new Date("2026-04-28T01:00:00Z");
 
         function updateCountdown() {
             const now = new Date();
